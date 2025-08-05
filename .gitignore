@@ -1,0 +1,5 @@
+.venv
+.vscode
+java/target
+.DS_S
+.DS_Store
