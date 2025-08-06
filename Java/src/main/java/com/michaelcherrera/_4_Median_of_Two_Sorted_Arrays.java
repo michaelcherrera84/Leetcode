@@ -109,12 +109,14 @@ public class _4_Median_of_Two_Sorted_Arrays {
                 int nums1Start, int nums1End,
                 int nums2Start, int nums2End) {
 
-            // If nums1 is exhausted, return k-th from nums2
+            // If nums1 is exhausted, return from nums2 the element at the difference of the target index
+            // and the quantity of passed indexes from nums1
             if (nums1End < nums1Start) {
                 return nums2[k - nums1Start];
             }
 
-            // If nums2 is exhausted, return k-th from nums1
+            // If nums2 is exhausted, return from nums1 the element at the difference of the target index
+            // and the quantity of passed indexes from nums2
             if (nums2End < nums2Start) {
                 return nums1[k - nums2Start];
             }
@@ -125,23 +127,18 @@ public class _4_Median_of_Two_Sorted_Arrays {
             int nums1MidValue = nums1[nums1Mid];
             int nums2MidValue = nums2[nums2Mid];
 
-            // Total number of elements to the left of both mids
+            // If k is in the right half of the combined indexes, remove the left of the smaller range.
+            // Otherwise, remove the right of the larger range.
             if (nums1Mid + nums2Mid < k) {
-                // We can discard the half with the smaller mid value
                 if (nums1MidValue > nums2MidValue) {
-                    // Discard left half of nums2
                     return findKth(nums1, nums2, k, nums1Start, nums1End, nums2Mid + 1, nums2End);
                 } else {
-                    // Discard left half of nums1
                     return findKth(nums1, nums2, k, nums1Mid + 1, nums1End, nums2Start, nums2End);
                 }
             } else {
-                // We can discard the half with the larger mid value
                 if (nums1MidValue > nums2MidValue) {
-                    // Discard right half of nums1
                     return findKth(nums1, nums2, k, nums1Start, nums1Mid - 1, nums2Start, nums2End);
                 } else {
-                    // Discard right half of nums2
                     return findKth(nums1, nums2, k, nums1Start, nums1End, nums2Start, nums2Mid - 1);
                 }
             }

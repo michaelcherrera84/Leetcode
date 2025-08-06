@@ -21,7 +21,6 @@
 # 0 <= s.length <= 5 * 10^4
 # s consists of English letters, digits, symbols and spaces.
 
-
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         """Sliding Window with Reset on Repeat"""
@@ -51,10 +50,6 @@ class Solution:
 
         return final
 
-solution = Solution()
-result = solution.lengthOfLongestSubstring("abcabcbb")
-print(result)
-
 class BetterSolution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         """Optimized Sliding Window using a dictionary (like Java's HashMap)"""
@@ -77,7 +72,15 @@ class BetterSolution:
             last_seen[char] = right
 
         return max_length
-    
-solution = BetterSolution()
-result = solution.lengthOfLongestSubstring("abcabcbb")
-print(result)
+
+def main():
+    solution = Solution()
+    result = solution.lengthOfLongestSubstring("abcabcbb")
+    print(result)
+
+    solution = BetterSolution()
+    result = solution.lengthOfLongestSubstring("abcabcbb")
+    print(result)
+
+if __name__ == "__main__":
+    main()
