@@ -66,6 +66,34 @@ var swapPairs = function(head) {
     return dummy.next;
 };
 
+/**
+ * Recursively swaps every two adjacent nodes in a singly-linked list.
+ * Does not modify node values; only rearranges the node links.
+ *
+ * @param {ListNode|null} head - The head of the original linked list.
+ * @return {ListNode|null} - The new head of the modified list.
+ */
+var swapPairsRecursive = function(head) {
+    // Base case: if the list is empty or has only one node, return it as-is
+    if (!head || !head.next) {
+        return head;
+    }
+
+    // Identify the first two nodes
+    const first = head;
+    const second = head.next;
+
+    // Recursively call swapPairs on the rest of the list (starting after the second node)
+    const restSwapped = swapPairsRecursive(second.next);
+
+    // Perform the actual swap
+    second.next = first;      // Second now points to first
+    first.next = restSwapped; // First now points to the head of the swapped rest
+
+    // Return new head (second becomes the new head of this segment)
+    return second;
+};
+
 //////////////////////
 // Test Setup Below //
 //////////////////////
@@ -113,4 +141,9 @@ printList(head);
 head = swapPairs(head);
 
 console.log("After swapping pairs:");
+printList(head);
+
+head = swapPairsRecursive(head);
+
+console.log("After swapping pairs back:");
 printList(head);
