@@ -13,6 +13,9 @@
 // 1 <= s.length <= 1000
 // s consist of only digits and English letters.
 
+/**
+ * Class for Manacher's algorithm to find all palindromic substrings in linear time.
+ */
 class Manacher {
     ms = "@"; // modified string with sentinels and separators to handle even/odd palindromes uniformly
     p; // array to store the radius of the palindrome centered at each position in ms
@@ -40,7 +43,7 @@ class Manacher {
         for (let i = 1; i < n - 1; i++) {
             // Calculate this mirror position of i with respect to the current palindrome center
             let mirror = l + r - i;
-            // Initialize p using the mirror value if within the current palindrome
+            // Assign p using the mirror value if within the current palindrome
             if (mirror >= 0 && mirror < n) this.p[i] = Math.max(0, Math.min(r - i, this.p[mirror]));
             else this.p[i] = 0;
 
