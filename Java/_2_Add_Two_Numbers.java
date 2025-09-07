@@ -1,5 +1,3 @@
-package com.michaelcherrera;
-
 public class _2_Add_Two_Numbers {
 
     public static class ListNode {
