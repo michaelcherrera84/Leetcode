@@ -1,5 +1,9 @@
 using System;
 
+// _12_Integer_to_Roman.Solution sol = new _12_Integer_to_Roman.Solution();
+// Console.WriteLine(sol.IntToRoman(55));
+
+
 /// <summary>
 /// Converts integers to Roman numerals (constraint: 1 <= num <= 3999).
 /// Implements digit-by-digit conversion by processing ones, tens,
@@ -104,19 +108,19 @@ public class _12_Integer_to_Roman
         {
             // Predefined Roman numeral representations for each digit place
             string[] thousands = { "", "M", "MM", "MMM" }; // 0-3
-            string[] hundreds  = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" }; // 0-9
-            string[] tens      = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" }; // 0-9
-            string[] ones      = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }; // 0-9
+            string[] hundreds = { "", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM" }; // 0-9
+            string[] tens = { "", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC" }; // 0-9
+            string[] ones = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }; // 0-9
 
             // Breakdown the number by place value:
             // - Thousands digit: num / 1000
             // - Hundreds digit: (num % 1000) / 100
             // - Tens digit: (num % 100) / 10
             // - Ones digit: num % 10
-            string result = 
-                thousands[num / 1000] + 
-                hundreds[(num % 1000) / 100] + 
-                tens[(num % 100) / 10] + 
+            string result =
+                thousands[num / 1000] +
+                hundreds[(num % 1000) / 100] +
+                tens[(num % 100) / 10] +
                 ones[num % 10];
 
             return result;

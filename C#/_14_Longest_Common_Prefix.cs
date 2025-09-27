@@ -1,5 +1,11 @@
 using System;
 
+// _14_Longest_Common_Prefix.Solution sol = new _14_Longest_Common_Prefix.Solution();
+// _14_Longest_Common_Prefix.AnotherSolution aSol = new _14_Longest_Common_Prefix.AnotherSolution();
+
+// Console.WriteLine(sol.LongestCommonPrefix(["flower", "flow", "flight"]));
+// Console.WriteLine(aSol.LongestCommonPrefix(["flower", "flow", "flight"]));
+
 public class _14_Longest_Common_Prefix
 {
     /// <summary>
