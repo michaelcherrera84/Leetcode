@@ -8,7 +8,3 @@ C#/obj
 C#/C#.csproj
 C#/Program.cs
 Leetcode.sln
-Swift/swift-executable/.build
-Swift/swift-executable/.vscode
-Swift/swift-executable/Package.swift
-Swift/swift-executable/Sources/swift-executable/swift_executable.swift
