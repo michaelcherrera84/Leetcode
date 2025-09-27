@@ -74,3 +74,6 @@ enum _16_3Sum_Closest {
         }
     }
 }
+
+let sol = _16_3Sum_Closest.Solution()
+print(sol.threeSumClosest([-1, 2, 1, -4], 1))
