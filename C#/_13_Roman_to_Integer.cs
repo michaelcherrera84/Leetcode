@@ -1,5 +1,10 @@
 using System;
 
+// _13_Roman_to_Integer.Solution sol = new _13_Roman_to_Integer.Solution();
+// _13_Roman_to_Integer.AnotherSolution aSol = new _13_Roman_to_Integer.AnotherSolution();
+// Console.WriteLine(sol.romanToInt("MMMXLVIII"));
+// Console.WriteLine(aSol.romanToInt("MMMXLVIII"));
+
 /// <summary>
 /// Problem 13: Roman to Integer
 /// Contains two different implementations for converting a Roman numeral string into its integer value.
