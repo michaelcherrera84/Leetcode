@@ -39,6 +39,7 @@ import java.util.PriorityQueue;
  * <li>The sum of {@code lists[i].length} will not exceed 104.</li>
  * </ul>
  */
+@SuppressWarnings("unused")
 public class _23_Merge_k_Sorted_Lists {
 
     /**
