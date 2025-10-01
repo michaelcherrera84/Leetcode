@@ -33,8 +33,8 @@ public class ListNode {
 ///
 /// #### Constraints:
 /// - The number of nodes in the list is `n`.
-/// `1 <= k <= n <= 5000`
-/// `0 <= Node.val <= 1000`
+/// - `1 <= k <= n <= 5000`
+/// - `0 <= Node.val <= 1000`
 class Solution {
 
     /// Reverses the nodes of a list `k` at a time, and returns the modified list.
@@ -43,11 +43,10 @@ class Solution {
     ///   - k: number of nodes to reverse at a time
     /// - Returns: the modified list
     func reverseKGroup(_ head: ListNode?, _ k: Int) -> ListNode? {
-        let subHead: ListNode? = head  // Marks the head of the current sublist being reversed
-        var prev: ListNode? = nil  // Tracks the previous node during reversal
-        var current: ListNode? = head  // Tracks the current node being processed
-        var next: ListNode? = nil  // Temporarily stores the next node
-        var count: Int = 0  // Counter for how many nodes have been reversed in this group
+        let groupTail: ListNode? = head     // Will become the tail of the reversed group
+        var prev: ListNode? = nil           // Tracks the previous node during reversal
+        var current: ListNode? = head       // Tracks the current node being processed
+        var next: ListNode? = nil           // Temporarily stores the next node
 
         // First, check if there are at least k nodes to reverse
         var test = head
@@ -61,17 +60,16 @@ class Solution {
         }
 
         // Reverse exactly k nodes
-        while count < k {
+        for _ in 0..<k {
             next = current?.next  // Store next node
             current?.next = prev  // Reverse pointer
             prev = current  // Move prev forward
             current = next  // Move current forward
-            count += 1
         }
 
         // After reversing k nodes, recurse on the rest of the list
         if next != nil {
-            subHead?.next = reverseKGroup(next, k)
+            groupTail?.next = reverseKGroup(next, k)
         }
 
         // prev now points to the new head of the reversed group
