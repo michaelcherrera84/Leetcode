@@ -1,22 +1,22 @@
 using System;
 
-var list = new _19_Remove_Nth_Node_From_End_of_List.ListNode(1);
-list.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(2);
-list.next.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(3);
-list.next.next.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(4);
-list.next.next.next.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(5);
+// var list = new _19_Remove_Nth_Node_From_End_of_List.ListNode(1);
+// list.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(2);
+// list.next.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(3);
+// list.next.next.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(4);
+// list.next.next.next.next = new _19_Remove_Nth_Node_From_End_of_List.ListNode(5);
 
-var sol = new _19_Remove_Nth_Node_From_End_of_List.Solution();
-list = sol.RemoveNthFromEnd(list, 2);
+// var sol = new _19_Remove_Nth_Node_From_End_of_List.Solution();
+// list = sol.RemoveNthFromEnd(list, 2);
 
-var temp = list;
-Console.Write("[");
-while (temp != null)
-{
-    Console.Write(temp.val + ",");
-    temp = temp.next;
-}
-Console.Write("\b]");
+// var temp = list;
+// Console.Write("[");
+// while (temp != null)
+// {
+//     Console.Write(temp.val + ",");
+//     temp = temp.next;
+// }
+// Console.Write("\b]");
 
 
 public class _19_Remove_Nth_Node_From_End_of_List
