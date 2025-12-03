@@ -2,7 +2,7 @@ from typing import List
 
 class Solution:
     """
-    You are given `a` string s and an array of strings `words`. All the strings of `words` are of **the same length**.
+    You are given a string `s` and an array of strings `words`. All the strings of `words` are of **the same length**.
 
     A **concatenated string** is a string that exactly contains all the strings of any permutation of `words` concatenated.
 
@@ -42,7 +42,7 @@ class Solution:
 
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
         """
-        You are given `a` string s and an array of strings `words`. All the strings of `words` are of **the same length**.
+        You are given a string `s` and an array of strings `words`. All the strings of `words` are of **the same length**.
         
         A **concatenated string** is a string that exactly contains all the strings of any permutation of `words` concatenated.
 
