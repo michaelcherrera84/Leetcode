@@ -2,7 +2,7 @@
 import java.util.Arrays;
 
 /**
- * You `are` given two integer arrays {@code nums1} and {@code nums2}, sorted in <b>non-decreasing order</b>, and two integers {@code m} and {@code n},
+ * You are given two integer arrays {@code nums1} and {@code nums2}, sorted in <b>non-decreasing order</b>, and two integers {@code m} and {@code n},
  * representing the number of elements in nums1 and nums2 respectively.
  * <p>
  * Merge {@code nums1} and {@code nums2} into a single array sorted in <b>non-decreasing order</b>.
@@ -101,11 +101,9 @@ public class _88_Merge_Sorted_Array {
 
                 // Place the larger of the two elements at the end
                 if (nums1[i] > nums2[j]) {
-                    nums1[k] = nums1[i];
-                    i--;
+                    nums1[k] = nums1[i--];
                 } else {
-                    nums1[k] = nums2[j];
-                    j--;
+                    nums1[k] = nums2[j--];
                 }
 
                 // Move the insertion pointer left
@@ -119,9 +117,7 @@ public class _88_Merge_Sorted_Array {
              * they are already in the correct position.
              */
             while (j >= 0) {
-                nums1[k] = nums2[j];
-                j--;
-                k--;
+                nums1[k--] = nums2[j--];
             }
         }
     }
